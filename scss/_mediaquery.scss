@@ -1,0 +1,139 @@
+// MOBILES
+@media screen and (min-width: 321px) {
+  .slider {
+    height: 26rem;
+  }
+}
+
+@media screen and (min-width: 376px) {
+  .slider {
+    height: 30rem;
+  }
+}
+
+// TABLETS
+@media screen and (min-width: 426px) {
+  html {
+    font-size: 50%;
+  }
+  .header__title {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .header__img {
+    grid-row: 1 / span 3;
+    grid-column: 2;
+  }
+
+  .skills__images {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .btn,
+  .btn__close {
+    min-width: 25%;
+    padding: 2rem 1rem;
+    font-size: 2rem;
+  }
+
+  .skills__content--active {
+    grid-template-columns: 1fr 9fr;
+    column-gap: 2rem;
+  }
+  .skills__content p {
+    grid-column: 2;
+  }
+
+  .features {
+    grid-template-columns: 1.8fr 1fr;
+    gap: 1rem;
+  }
+
+  .features__header {
+    grid-column: 1 / span 2;
+  }
+
+  .features__img {
+    grid-row: 2 / span 3;
+    grid-column: 2;
+  }
+
+  .slider {
+    height: 45rem;
+  }
+}
+
+// LAPTOPS
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 50%;
+  }
+  .nav .nav__item {
+    display: block;
+  }
+  .nav__item:last-child {
+    display: none;
+  }
+
+  .header__title h1 {
+    white-space: nowrap;
+  }
+  .features__header {
+    font-size: 1.8rem;
+  }
+
+  .features__feature {
+    font-size: 1.5rem;
+  }
+
+  .features {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+
+    grid-template-rows: auto;
+  }
+
+  .slider {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .features__header {
+    grid-column: 1 / span 2;
+  }
+  .features__img {
+    grid-row: 2 / span 3;
+  }
+
+  .features {
+    width: 60%;
+    grid-template-columns: 1.3fr 1fr;
+  }
+
+  .features__feature {
+    font-size: 1.8rem;
+  }
+
+  .slider {
+    width: 60%;
+    height: 53rem;
+  }
+}
+
+// 4K
+@media screen and (min-width: 1540px) {
+  html {
+    font-size: 100%;
+  }
+
+  .features {
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  .slider {
+    height: 45rem;
+  }
+}

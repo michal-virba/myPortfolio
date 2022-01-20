@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="316px" height="307px" viewBox="0 0 316 307" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB" id="filter_1">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+      <feOffset dx="6" dy="6" />
+      <feGaussianBlur stdDeviation="6" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.39215687 0 0 0 0 0.39215687 0 0 0 0 0.39215687 0 0 0 0.49803922 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect0_dropShadow" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect0_dropShadow" result="shape" />
+    </filter>
+  </defs>
+  <path d="M140 110L60 0L0 0L0 270L60 270L60 80L140 200L220 80L220 270L280 270L280 0L220 0L140 110Z" transform="translate(12 12)" id="Line-12" fill="#5EC576" fill-rule="evenodd" stroke="none" filter="url(#filter_1)" />
+  <path d="M0 0L20 0L120 150L220 0L240 4.37722e-07L240 50L120 230L0 50L0 0Z" transform="translate(32 52)" id="Line-2" fill="#FFCB03" fill-rule="evenodd" stroke="none" filter="url(#filter_1)" />
+</svg>
