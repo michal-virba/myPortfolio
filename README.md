@@ -6,6 +6,8 @@ Technology that I used:
 * HTML  
 * CSS, SCSS  
 * JS (vanilla)  
+  
 Page is written in English.  
 I hope you will enjoy it.  
+  
 Michal
