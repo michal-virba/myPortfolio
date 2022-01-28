@@ -1,6 +1,5 @@
 # myPortfolio  
 ## Michal Virba  
-### See my newest skill in form of my portfolio  
 ---
 Technology that I used:  
 * HTML  
