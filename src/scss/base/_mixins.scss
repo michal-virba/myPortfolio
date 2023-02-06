@@ -1,0 +1,71 @@
+////////////////////////////////////////
+// BREAKPOINTS
+$S: 500px;
+$M: 768px;
+$L: 1024px;
+$XL: 1440px;
+$XXL: 1920px;
+
+////////////////////////////////////////
+// MEDIA QUERIES
+@mixin MQ($canvas) {
+    @if $canvas == S {
+        @media only screen and (min-width: $S) {
+            @content;
+        }
+    } @else if $canvas == M {
+        @media only screen and (min-width: $M) {
+            @content;
+        }
+    } @else if $canvas == L {
+        @media only screen and (min-width: $L) {
+            @content;
+        }
+    } @else if $canvas == XL {
+        @media only screen and (min-width: $XL) {
+            @content;
+        }
+    } @else if $canvas == XXL {
+        @media only screen and (min-width: $XXL) {
+            @content;
+        }
+    }
+}
+
+@mixin MQ-max($canvas) {
+    @if $canvas == S {
+        @media only screen and (max-width: $S) {
+            @content;
+        }
+    } @else if $canvas == M {
+        @media only screen and (max-width: $M) {
+            @content;
+        }
+    } @else if $canvas == L {
+        @media only screen and (max-width: $L) {
+            @content;
+        }
+    } @else if $canvas == XL {
+        @media only screen and (max-width: $XL) {
+            @content;
+        }
+    } @else if $canvas == XXL {
+        @media only screen and (max-width: $XXL) {
+            @content;
+        }
+    }
+}
+
+////////////////////////////////////////
+// MIXINS
+@mixin site-width {
+    position: relative;
+    width: 114.4rem;
+    max-width: calc(100% - 3.2rem);
+    margin: 0 auto;
+}
+
+@mixin set-site-width($width-rem) {
+    @include site-width;
+    width: $width-rem + rem;
+}

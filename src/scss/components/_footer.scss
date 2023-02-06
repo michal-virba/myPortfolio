@@ -1,0 +1,46 @@
+/* FOOTER */
+.c-footer {
+    $root: &;
+
+    padding: 10rem 3rem;
+    background-color: $color-bg-foot;
+
+    &__nav {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 5rem;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 4rem;
+        }
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    &__link {
+        font-size: 1.6rem;
+        color: #eee;
+        text-decoration: none;
+    }
+
+    &__logo {
+        height: 5rem;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+    }
+
+    &__copyright {
+        font-size: 1.4rem;
+        color: #aaa;
+        text-align: center;
+
+        & #{$root}__link {
+            font-size: 1.4rem;
+        }
+    }
+}

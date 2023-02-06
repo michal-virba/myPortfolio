@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
+
+$font-family-primary: 'Rubik', sans-serif;
+
+$color-brand: #aee6b5;
+$color-bg: #2b3e50;
+$color-bg-foot: #37383d;
+
+$color-brand-light: lighten($color-brand, 20%);
+$color-bg-light: lighten($color-bg, 20%);
+
+$color-uno: #5ec576;
+$color-dos: #ffcb03;
+$color-tres: #ff585f;
+
+$color-uno-dark: darken($color-uno, 20%);
+$color-dos-dark: darken($color-dos, 20%);
+$color-tres-dark: darken($color-tres, 20%);
+
+$color-uno-opacity: #5ec5763a;
+$color-dos-opacity: #ffcd0331;
+$color-tres-opacity: #ff58602d;
+
+$color-primary-rgba: rgba(174, 230, 181, 0.95);
+$color-primary-rgba-two: rgba(174, 230, 181, 0.5);
+$color-primary-rgba-three: rgba(174, 230, 181, 0.2);
+
+$gradient-first: linear-gradient(to top left, $color-uno, $color-dos);
