@@ -1,0 +1,31 @@
+@keyframes object-rotation {
+    0% {
+        background-color: $color-uno;
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    50% {
+        background-color: $color-dos;
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+    100% {
+        background-color: $color-uno;
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+}
+
+@keyframes revealing {
+    0% {
+        filter: blur(20rem);
+    }
+    100% {
+        filter: blur(0);
+    }
+}

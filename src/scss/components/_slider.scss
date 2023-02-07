@@ -1,103 +1,117 @@
 /* SLIDER */
-.slider {
-  position: absolute;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  max-width: 100%;
-  height: 22rem;
-  margin: 0 auto;
-  position: relative;
+.c-slider {
+    $root: &;
 
-  overflow: hidden;
-}
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    max-width: 100%;
+    height: 22rem;
+    margin: 0 auto;
+    position: relative;
 
-.slide {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: auto;
+    overflow: hidden;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    @include MQ(S) {
+        height: 30rem;
+    }
 
-  transition: transform 1s;
-}
+    @include MQ(M) {
+        width: 75%;
+    }
 
-.slide > figure {
-  /* Only for images that have different size than slide */
-  width: 100%;
-  height: 100%;
-}
+    @include MQ(L) {
+        width: 60%;
+        height: 53rem;
+    }
 
-.slide img {
-  width: 100%;
-  height: auto;
-  object-fit: fill;
-}
+    & figcaption {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        color: $color-tres;
+        text-shadow: 0.1rem 0.1rem #000;
+        font-size: 2rem;
+        font-weight: bold;
+    }
 
-.slider figcaption {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  color: var(--color-three);
-  text-shadow: 0.1rem 0.1rem #000;
-  font-size: 2rem;
-  font-weight: bold;
-}
+    &__btn {
+        position: absolute;
+        top: 50%;
+        z-index: 10;
 
-.slider__btn {
-  position: absolute;
-  top: 50%;
-  z-index: 10;
+        border: none;
+        background: $color-brand;
+        font-family: inherit;
+        color: $color-bg;
+        border-radius: 50%;
+        height: 5.5rem;
+        width: 5.5rem;
+        font-size: 3.25rem;
+        cursor: pointer;
+    }
 
-  border: none;
-  background: var(--color-primary);
-  font-family: inherit;
-  color: var(--color-secondary);
-  border-radius: 50%;
-  height: 5.5rem;
-  width: 5.5rem;
-  font-size: 3.25rem;
-  cursor: pointer;
-}
+    &__btn--left {
+        left: 6%;
+        transform: translate(-50%, -50%);
+    }
 
-.slider__btn--left {
-  left: 6%;
-  transform: translate(-50%, -50%);
-}
+    &__btn--right {
+        right: 6%;
+        transform: translate(50%, -50%);
+    }
 
-.slider__btn--right {
-  right: 6%;
-  transform: translate(50%, -50%);
-}
+    &__slide {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: auto;
 
-.dots {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-}
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-.dots__dot {
-  border: none;
-  background-color: var(--color-primary);
-  opacity: 0.7;
-  height: 1rem;
-  width: 1rem;
-  border-radius: 50%;
-  margin-right: 1.75rem;
-  cursor: pointer;
-  transition: all 0.5s;
-}
+        transition: transform 1s;
+    }
 
-.dots__dot:last-child {
-  margin: 0;
-}
+    &__slide > figure {
+        width: 100%;
+        height: 100%;
+    }
 
-.dots__dot--active {
-  background-color: var(--color-primary-lighter);
-  opacity: 1;
+    &__slide img {
+        width: 100%;
+        height: auto;
+        object-fit: fill;
+    }
+
+    &__dots {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+
+        #{$root}__dot {
+            border: none;
+            background-color: $color-brand;
+            opacity: 0.7;
+            height: 1rem;
+            width: 1rem;
+            border-radius: 50%;
+            margin-right: 1.75rem;
+            cursor: pointer;
+            transition: all 0.5s;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &--active {
+                background-color: $color-brand-light;
+                opacity: 1;
+            }
+        }
+    }
 }

@@ -1,51 +1,101 @@
 /* FEATURES */
-.features {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 4rem;
-  margin: 2rem 2rem;
-}
+.c-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    margin: 2rem 2rem;
 
-.features__img {
-  width: 100%;
-  height: auto;
-  border: 0.1rem solid var(--color-primary);
-}
+    @include MQ(S) {
+        grid-template-columns: 1.8fr 1fr;
+        gap: 1rem;
+    }
 
-.features__feature {
-  align-self: center;
-  justify-self: center;
-  width: 100%;
-  font-size: 1.5rem;
-}
+    @include MQ(M) {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-rows: auto;
+    }
 
-.features__feature p:not(:first-of-type) {
-  margin-top: 1rem;
-}
+    @include MQ(L) {
+        width: 60%;
+        grid-template-columns: 1.3fr 1fr;
+    }
 
-.features__feature hr {
-  border: 0.1rem solid var(--color-primary);
-  background: var(--color-primary);
-}
+    &__img {
+        width: 100%;
+        height: auto;
+        border: 0.1rem solid $color-brand;
 
-.features__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-one-opacity);
-  height: 5.5rem;
-  width: 5.5rem;
-  border-radius: 50%;
-  margin-bottom: 2rem;
-}
+        @include MQ(S) {
+            grid-row: 2 / span 3;
+            grid-column: 2;
+        }
 
-.features__icon svg {
-  height: 2.5rem;
-  width: 2.5rem;
-  fill: var(--color-one);
-}
+        @include MQ(L) {
+            grid-row: 2 / span 3;
+        }
 
-.features__header {
-  color: var(--color-primary-lighter);
-  font-size: 2rem;
+        @include MQ(XL) {
+            grid-template-columns: 1.5fr 1fr;
+        }
+    }
+
+    &__feature {
+        align-self: center;
+        justify-self: center;
+        width: 100%;
+        font-size: 1.5rem;
+
+        @include MQ(M) {
+            font-size: 1.5rem;
+        }
+
+        @include MQ(L) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__feature p:not(:first-of-type) {
+        margin-top: 1rem;
+    }
+
+    &__feature hr {
+        border: 0.1rem solid $color-brand;
+        background: $color-brand;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $color-uno-opacity;
+        height: 5.5rem;
+        width: 5.5rem;
+        border-radius: 50%;
+        margin-bottom: 2rem;
+    }
+
+    &__icon svg {
+        height: 2.5rem;
+        width: 2.5rem;
+        fill: $color-uno;
+    }
+
+    &__header {
+        color: $color-brand-light;
+        font-size: 2rem;
+
+        @include MQ(S) {
+            grid-column: 1 / span 2;
+        }
+
+        @include MQ(M) {
+            font-size: 1.8rem;
+        }
+
+        @include MQ(L) {
+            grid-column: 1 / span 2;
+        }
+    }
 }

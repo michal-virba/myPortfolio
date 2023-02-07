@@ -1,163 +1,132 @@
 /* HEADER */
-.header {
-  padding: 0 3rem;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+.c-header {
+    padding: 0 3rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-/* ANIMATION */
-.header__area {
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
+    &__area {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
 
-.header__squares {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+    &__squares {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
 
-.header__squares li {
-  position: absolute;
-  display: block;
-  list-style: none;
-  width: 3rem;
-  height: 3rem;
-  animation: object-rotation 25s linear infinite;
+    &__squares li {
+        position: absolute;
+        display: block;
+        list-style: none;
+        width: 3rem;
+        height: 3rem;
+        animation: object-rotation 25s linear infinite;
 
-  bottom: -150px;
-}
+        bottom: -150px;
+    }
 
-@for $i from 1 through 6 {
-  $position: $i * 12 + #{'%'};
-  $size: 3 * $i + rem;
-  $delay: 1 * $i + s;
-  $duration: 30 / $i + s;
+    @for $i from 1 through 6 {
+        $position: $i * 12 + #{'%'};
+        $size: 3 * $i + rem;
+        $delay: 1 * $i + s;
+        $duration: 30 / $i + s;
 
-  .header__squares li:nth-child(#{$i}) {
-    left: $position;
-    width: $size;
-    height: $size;
-    animation-delay: $delay;
-    animation-duration: $duration;
-  }
-}
+        &__squares li:nth-child(#{$i}) {
+            left: $position;
+            width: $size;
+            height: $size;
+            animation-delay: $delay;
+            animation-duration: $duration;
+        }
+    }
 
-@for $i from 1 through 6 {
-  $position: 80 / $i + #{'%'};
-  $size: 2 * $i + rem;
-  $delay: 2 * $i + s;
-  $duration: 5 * $i + s;
+    @for $i from 1 through 6 {
+        $position: 80 / $i + #{'%'};
+        $size: 2 * $i + rem;
+        $delay: 2 * $i + s;
+        $duration: 5 * $i + s;
 
-  .header__squares li:nth-child(#{$i + 6}) {
-    left: $position;
-    width: $size;
-    height: $size;
-    animation-delay: $delay;
-    animation-duration: $duration;
-  }
-}
+        &__squares li:nth-child(#{$i + 6}) {
+            left: $position;
+            width: $size;
+            height: $size;
+            animation-delay: $delay;
+            animation-duration: $duration;
+        }
+    }
 
-@keyframes object-rotation {
-  0% {
-    background-color: var(--color-one);
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-    border-radius: 0;
-  }
+    &__title {
+        flex: 1;
 
-  50% {
-    background-color: var(--color-two);
-    transform: translateY(-1000px) rotate(720deg);
-    opacity: 0;
-    border-radius: 50%;
-  }
+        max-width: 115rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto inherit auto auto;
+        row-gap: 3rem;
+        align-content: center;
+        justify-content: center;
 
-  100% {
-    background-color: var(--color-one);
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-    border-radius: 0;
-  }
-}
+        align-items: start;
+        justify-items: start;
 
-.header__title {
-  flex: 1;
-  // margin-top: 2rem;
+        animation: revealing 1.5s cubic-bezier(0.25, 1, 0.5, 1);
 
-  max-width: 115rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto inherit auto auto;
-  row-gap: 3rem;
-  align-content: center;
-  justify-content: center;
+        @include MQ(S) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto;
+        }
 
-  align-items: start;
-  justify-items: start;
+        @include MQ(M) {
+            white-space: nowrap;
+        }
+    }
 
-  animation: revealing 1.5s cubic-bezier(0.25, 1, 0.5, 1);
-}
+    &__img {
+        display: inline;
+        width: 70%;
+        height: auto;
+        grid-row: 2;
+        margin: 0 auto;
+        border-radius: 50%;
+        border: 0.25rem solid $color-brand;
 
-@keyframes revealing {
-  0% {
-    filter: blur(20rem);
-  }
-  100% {
-    filter: blur(0);
-  }
-}
-
-h1 {
-  font-size: 5.5rem;
-  line-height: 1.35;
-}
-
-h4 {
-  font-size: 2.4rem;
-  font-weight: 500;
-}
-
-.header__img {
-  display: inline;
-  width: 70%;
-  height: auto;
-  // grid-column: 1;
-  grid-row: 2;
-  margin: 0 auto;
-  border-radius: 50%;
-  border: 0.25rem solid var(--color-primary);
+        @include MQ(S) {
+            grid-row: 1 / span 3;
+            grid-column: 2;
+        }
+    }
 }
 
 .text__gradient {
-  background: var(--gradient-first);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background: $gradient-first;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .highlight {
-  position: relative;
-  z-index: 10;
-  color: var(--color-secondary);
-}
+    position: relative;
+    z-index: 10;
+    color: $color-bg;
 
-.highlight::after {
-  display: block;
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  opacity: 0.7;
-  transform: scale(1.05, 1.5) skewX(-3deg) skewY(3deg);
-  background-image: var(--gradient-first);
+    &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.7;
+        transform: scale(1.05, 1.5) skewX(-3deg) skewY(3deg);
+        background-image: $gradient-first;
+    }
 }

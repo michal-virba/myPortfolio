@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; // 1rem = 10px
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 300;
+    color: $color-brand;
+    line-height: 1.9;
+    background-color: $color-bg;
+}
+
+h1 {
+    font-size: 5.5rem;
+    line-height: 1.35;
+}
+
+h4 {
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+p {
+    color: $color-brand;
+}
+
+button:focus {
+    outline: none;
+}
+
+img {
+    transition: filter 0.5s;
+}
+
+/* GENERAL ELEMENTS */
+.c-section {
+    padding: 15rem 3rem;
+    border-top: 1px solid $color-brand;
+
+    transition: transform 1s, opacity 1s;
+
+    &--hidden {
+        opacity: 0;
+        transform: translateY(8rem);
+    }
+
+    &__title {
+        max-width: 80rem;
+        margin: 0 auto 8rem auto;
+    }
+
+    &__description {
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $color-uno;
+        margin-bottom: 1rem;
+    }
+
+    &__header {
+        font-size: 4rem;
+        line-height: 1.3;
+        font-weight: 500;
+        text-shadow: 2px 2px $color-bg-light;
+    }
+
+    &__paragraph {
+        font-size: 3rem;
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+}
+
+.c-btn {
+    &,
+    &__close {
+        display: inline-block;
+        background-color: $color-uno;
+        min-width: 30%;
+        font-size: 1.6rem;
+        font-family: inherit;
+        font-weight: 500;
+        border: none;
+        padding: 1.25rem 1rem;
+        border-radius: 10rem;
+        cursor: pointer;
+        transition: all 0.3s;
+
+        @include MQ(S) {
+            min-width: 25%;
+            padding: 2rem 1rem;
+            font-size: 2rem;
+        }
+    }
+
+    &__close {
+        background-color: $color-tres;
+    }
+
+    &:hover {
+        background-color: $color-uno-dark;
+    }
+    &__close:hover {
+        background-color: $color-tres-dark;
+    }
+    &--text {
+        display: inline-block;
+        background: none;
+        font-size: 1.7rem;
+        font-family: inherit;
+        font-weight: 500;
+        color: $color-uno;
+        border: none;
+        border-bottom: 1px solid currentColor;
+        padding-bottom: 2px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+}
+
+.lazy-img {
+    filter: blur(20px);
+}
+
+/* Monokai Pro colors */
+.c-span {
+    &__blue {
+        color: #78dce8;
+    }
+    &__purple {
+        color: #ab9df2;
+    }
+    &__red {
+        color: #ff6188;
+    }
+    &__class {
+        color: #a9dc76;
+    }
+    &__string {
+        color: #ffd866;
+    }
+    &__gray {
+        color: #aaa;
+    }
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}

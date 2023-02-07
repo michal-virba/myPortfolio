@@ -1,19 +1,17 @@
-//BASE scss
+// BASE
 @import './base/variables';
 @import './base/mixins';
+@import './base/general';
 
-// COMPONENTS scss
+// COMPONENTS
+@import './components/header';
+@import './components/navigation';
 @import './components/footer';
+@import './components/features';
+@import './components/skills';
+@import './components/slider';
+@import './components/modal';
+@import './components/signup';
 
-// TODO remake
-@import 'colors';
-@import 'general';
-@import 'navigation';
-@import 'header';
-@import 'features';
-@import 'skills';
-@import 'slider';
-@import 'signup';
-@import 'modal';
-
-@import 'mediaquery';
+// ANIMATIONS
+@import './animations/keyframes';
