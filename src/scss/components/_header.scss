@@ -37,7 +37,7 @@
         $position: $i * 12 + #{'%'};
         $size: 3 * $i + rem;
         $delay: 1 * $i + s;
-        $duration: 30 / $i + s;
+        $duration: calc(30 / $i) + s;
 
         &__squares li:nth-child(#{$i}) {
             left: $position;
@@ -49,7 +49,7 @@
     }
 
     @for $i from 1 through 6 {
-        $position: 80 / $i + #{'%'};
+        $position: calc(80 / $i) + #{'%'};
         $size: 2 * $i + rem;
         $delay: 2 * $i + s;
         $duration: 5 * $i + s;
